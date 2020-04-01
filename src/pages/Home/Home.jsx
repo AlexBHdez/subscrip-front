@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FiveHundredPx } from '@styled-icons/boxicons-logos'
 import { ReactComponent as SavingsImage } from '../../images/svg/undraw_savings.svg'
 import { Button } from '../../ui'
+import { useHistory } from 'react-router-dom'
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,7 +24,17 @@ const ImageWrapper = styled.div`
   }
 `
 
+const Link = styled.span`
+  cursor: pointer;
+  font-weight: 500;
+`
+
+
 const Home = () => {
+  const history = useHistory()
+  const loginButtonHandle = () => history.push('/login')
+  const signupLinkHandle = () => history.push('/signup')
+
   return (
     <Wrapper>
       <div>
@@ -33,8 +44,8 @@ const Home = () => {
       <ImageWrapper>
         <SavingsImage />
       </ImageWrapper>
-      <Button onClick={ () => console.log('clicked') }>Login</Button>
-      <p>You do not have a account yet? Sign in here.</p>
+      <Button onClick={ loginButtonHandle }>Login</Button>
+      <p>You don't have a account yet? <Link onClick={ signupLinkHandle }>Sign in here.</Link></p>
     </Wrapper>
   )
 }
