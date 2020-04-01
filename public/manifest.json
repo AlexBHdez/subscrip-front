@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Subscrip App",
+  "name": "Manage your subscriptions",
   "icons": [
     {
       "src": "favicon.ico",
