@@ -12,8 +12,8 @@ const Login = inject('store')(observer(props => {
 
   return (
     <Form onSubmit={ handleSubmit }>
-      <FormField label='Email' type='email' name='email' required onChange={ handleInputChange } value={ inputs.email || '' } />
-      <FormField label='Password' type='password' name='password' required onChange={ handleInputChange } value={ inputs.password || '' } />
+      <FormField label='Email' htmlFor='email' type='email' name='email' onChange={ handleInputChange } value={ inputs.email || '' } />
+      <FormField label='Password' htmlFor='password' type='password' name='password' onChange={ handleInputChange } />
       <Button type='submit'>Log in</Button>
     </Form>
   )
