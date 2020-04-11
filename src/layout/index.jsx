@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import { Header, Controls } from './components'
+import { Header } from './components'
 
 const Container = styled.div`
   height: 100%;
@@ -18,6 +17,7 @@ const AppContainer = styled.div`
   flex-direction: column;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .08);
   border-radius: 12px;
+  background: ${ ({ theme }) => theme.colors.containerBackground };
 `
 
 const Inner = styled.main`
@@ -28,11 +28,10 @@ const Inner = styled.main`
 const Layout = ({ children }) => (
   <Container>
     <AppContainer>
-      {/* <Header /> */}
+      <Header />
         <Inner>
           { children }
         </Inner>
-      <Controls />
     </AppContainer>
   </Container>
 )

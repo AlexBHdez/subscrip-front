@@ -6,8 +6,9 @@ import { centerFlex } from './includes'
 export const lightTheme = {
   colors: {
     browserBackground: '#fafafa',
-    background: 'tomato',
-    gray: '#d8d8d8'
+    containerBackground: 'linear-gradient(to bottom, #f5f5f5 80%, #ffffff)',
+    gray: '#d8d8d8',
+    black: '#000000'
   },
   includes: {
     centerFlex,

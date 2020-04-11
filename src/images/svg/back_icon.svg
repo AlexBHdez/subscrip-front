@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="24px" viewBox="0 0 14 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>back_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bankly_landing_page_with_phone" transform="translate(-125.000000, -135.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="screen" transform="translate(111.000000, 135.000000)">
+                <g id="header" transform="translate(6.000000, 0.000000)">
+                    <path d="M21.4444444,20.9577465 L12.2777778,12 L21.4444444,3.04225352 C21.7777778,2.70422535 21.9722222,2.28169014 21.9722222,1.8028169 C21.9722222,1.32394366 21.8055556,0.873239437 21.4722222,0.535211268 C21.1388889,0.197183099 20.7222222,0 20.25,0 L20.2222222,0 C19.7777778,0 19.3333333,0.169014085 19,0.507042254 L8.52777778,10.7323944 C8.19444444,11.0704225 8,11.5211268 8,12 C8,12.4788732 8.19444444,12.9577465 8.52777778,13.2676056 L19.0277778,23.4929577 C19.3611111,23.8028169 19.7777778,24 20.25,24 C20.7222222,24 21.1666667,23.8028169 21.5,23.4647887 C21.8333333,23.1267606 22,22.6760563 22,22.1971831 C22,21.7183099 21.8055556,21.2676056 21.4444444,20.9577465 Z" id="back_icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
