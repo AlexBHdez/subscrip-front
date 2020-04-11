@@ -18,11 +18,13 @@ const AppContainer = styled.div`
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .08);
   border-radius: 12px;
   background: ${ ({ theme }) => theme.colors.containerBackground };
+  position: relative;
 `
 
 const Inner = styled.main`
   flex-grow: 1;
   padding: 0 2rem;
+  margin-top: 90px;
 `
 
 const Layout = ({ children }) => (

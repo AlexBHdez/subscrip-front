@@ -7,6 +7,10 @@ const HeaderWrap = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 `
 
 const Header = () => (

@@ -1,22 +1,20 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { inject, observer } from 'mobx-react'
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  background-color: ${ ({ theme }) => theme.colors.background };
-`
+import { Welcome } from '../../ui'
 
 const Dashboard = inject('store')(observer(props => {
   const { loggedIn, user } = props.store
+  const username = user && user.name
+
   if (!loggedIn) {
     return <Redirect to='/' />
   }
+
   return (
-    <Wrapper>
-      <h1>Dashboard</h1>
-      <p>{ user && user.name }</p>
-    </Wrapper>
+    <div>
+      <Welcome username={ username } />
+    </div>
   )
 }))
 
