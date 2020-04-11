@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, Switch } from 'react-router-dom'
+import { Router, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import { BASE_PATH } from './utils/constants'
 
@@ -34,7 +34,7 @@ class SubscripApp extends Component {
           <Layout>
             <Router history={ browserHistory }>
               <Switch>
-                <Route exact path='/' component={ Home } />
+                <AnonRoute exact path='/' component={ Home } />
                 <PrivateRoute exact path='/dashboard' component={ Dashboard } />
                 <AnonRoute exact path='/signup' component={ Signup } />
                 <AnonRoute exact path='/login' component={ Login } />
