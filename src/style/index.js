@@ -15,6 +15,9 @@ export const lightTheme = {
   },
   includes: {
     centerFlex,
+  },
+  logosColor : {
+    netflix: '#e50914'
   }
 }
 
