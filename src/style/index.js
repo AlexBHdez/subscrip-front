@@ -8,7 +8,10 @@ export const lightTheme = {
     browserBackground: '#fafafa',
     containerBackground: 'linear-gradient(to bottom, #f5f5f5 80%, #ffffff)',
     gray: '#d8d8d8',
-    black: '#000000'
+    black: '#000000',
+    white: '#ffffff',
+    sectionTitle: '#8175a3',
+    subscriptionName: '#8175a3'
   },
   includes: {
     centerFlex,

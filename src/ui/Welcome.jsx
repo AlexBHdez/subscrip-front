@@ -6,6 +6,7 @@ const WelcomeWrap = styled.h1`
   font-size: 48px;
   font-weight: 300;
   line-height: 60px;
+  margin-bottom: 20px;
 
   > *:last-child {
     font-weight: 500;

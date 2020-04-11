@@ -4,3 +4,6 @@ import { get, post } from './request'
 export const getUser = async () => get('user/me', null, true)
 export const login = async credentials => post('user/login', credentials, false)
 export const signup = async credentials => post('user/register', credentials, false)
+
+// SUBCRIPTIONS REQUESTS
+export const getAllSubscriptions = async () => get('subscriptions/all', null, true)

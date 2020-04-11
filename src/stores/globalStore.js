@@ -1,6 +1,7 @@
 import { decorate, observable, action } from 'mobx'
 import { lightTheme } from '../style'
 import userApi from '../api/userApi'
+import subscriptionApi from '../api/subscriptionApi'
 import { setToken, getToken, removeToken } from '../utils/token'
 
 class GlobalStore {
@@ -9,6 +10,7 @@ class GlobalStore {
     this.loading = true
     this.loggedIn = false
     this.user = null
+    this.subscriptions = []
   }
 
   setLoading(loading) {
@@ -59,6 +61,11 @@ class GlobalStore {
     await removeToken()
     this.reset()
   }
+
+  getSubscriptions = async () => {
+    const { subscriptions } = await subscriptionApi.getAll()
+    this.subscriptions = subscriptions
+  }
 }
 
 decorate(GlobalStore, {
@@ -72,7 +79,9 @@ decorate(GlobalStore, {
   signupUser: action,
   loginUser: action,
   setUser: action,
-  logout: action
+  logout: action,
+  subscriptions: observable,
+  getSubscriptions: action
 })
 
 const globalStore = new GlobalStore()
