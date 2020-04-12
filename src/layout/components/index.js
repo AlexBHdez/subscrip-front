@@ -1,2 +1,2 @@
-export { default as Header } from './Header'
-export { default as Controls } from './Controls'
+export { default as TopControls } from './TopControls'
+export { default as BottomControls } from './BottomControls'

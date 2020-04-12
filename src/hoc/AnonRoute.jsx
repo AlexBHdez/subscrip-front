@@ -7,7 +7,7 @@ const AnonRoute = inject('store')(observer(props => {
   return (
     <Route 
       render={ () => 
-        !loggedIn ? <Component /> : <Redirect to='/Dashboard' />
+        !loggedIn ? <Component /> : <Redirect to='/dashboard' />
       }
     />
   )

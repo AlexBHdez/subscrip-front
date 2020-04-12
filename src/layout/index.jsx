@@ -1,6 +1,7 @@
 import React from 'react'
+import { inject, observer } from 'mobx-react'
 import styled from 'styled-components'
-import { Header } from './components'
+import { TopControls, BottomControls } from './components'
 
 const Container = styled.div`
   height: 100%;
@@ -27,15 +28,16 @@ const Inner = styled.main`
   margin-top: 90px;
 `
 
-const Layout = ({ children }) => (
+const Layout = inject('store')(observer(({ children, store }) => (
   <Container>
     <AppContainer>
-      <Header />
-        <Inner>
-          { children }
-        </Inner>
+      <TopControls loggedIn={ store.loggedIn } />
+      <Inner>
+        { children }
+      </Inner>
+      <BottomControls loggedIn={ store.loggedIn } />
     </AppContainer>
   </Container>
-)
+)))
 
 export default Layout

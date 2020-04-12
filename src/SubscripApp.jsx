@@ -15,9 +15,10 @@ import { Logo } from './ui'
 // Pages components
 import {
   Home,
-  Dashboard,
   Login,
   Signup,
+  Dashboard,
+  AddSubscription,
   Private
 } from './pages'
 
@@ -31,17 +32,18 @@ class SubscripApp extends Component {
         <ThemeProvider theme={ globalStore.theme }>
           <Auth />
           <Logo />
-          <Layout>
             <Router history={ browserHistory }>
-              <Switch>
-                <AnonRoute exact path='/' component={ Home } />
-                <PrivateRoute exact path='/dashboard' component={ Dashboard } />
-                <AnonRoute exact path='/signup' component={ Signup } />
-                <AnonRoute exact path='/login' component={ Login } />
-                <PrivateRoute exact path='/private' component={ Private } />
-              </Switch>
+              <Layout>
+                <Switch>
+                  <AnonRoute exact path='/' component={ Home } />
+                  <AnonRoute exact path='/signup' component={ Signup } />
+                  <AnonRoute exact path='/login' component={ Login } />
+                  <PrivateRoute exact path='/dashboard' component={ Dashboard } />
+                  <PrivateRoute exact path='/add' component={ AddSubscription } />
+                  <PrivateRoute exact path='/private' component={ Private } />
+                </Switch>
+              </Layout>
             </Router>
-          </Layout>
           <GlobalStyle />
         </ThemeProvider>
       </Provider>

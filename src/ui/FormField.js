@@ -11,7 +11,7 @@ const FormFieldWrap = styled.div`
     top: -15px;
     left: 15px;
     font-weight: 500;
-    background-color: ${ ({ theme }) => theme.colors.browserBackground };
+    background-color: #f5f5f5;
     color: ${ ({ theme }) => theme.colors.gray };
     padding: 4px 8px;
     transition: color .35s ease;  
