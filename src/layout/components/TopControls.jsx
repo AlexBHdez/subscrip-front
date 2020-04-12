@@ -12,11 +12,15 @@ const HeaderWrap = styled.header`
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 9;
 `
 
 const StyledBackIcon = styled(BackIcon)`
   cursor: pointer;
   transition: transform .15s ease-out;
+  path {
+    fill: ${ ({ theme, lightColor }) => theme.colors[ lightColor ? 'white' : 'black' ] };
+  }
   
   &:hover {
     transform: translateX(-4px)
@@ -27,13 +31,14 @@ const TopControls = ({ loggedIn }) => {
   const { pathname } = useLocation()
   const { goBack } = useHistory()
   const isDashboard = pathname === '/dashboard'
+  const lightColor = pathname === '/add'
 
   if (!loggedIn) return null
   
   return (
     <HeaderWrap>
-      { isDashboard ? <div></div> : <StyledBackIcon onClick={ goBack } /> }
-      <Burger />
+      { isDashboard ? <div></div> : <StyledBackIcon onClick={ goBack } lightColor={ lightColor } /> }
+      <Burger lightColor={ lightColor } />
     </HeaderWrap>
   )
 }

@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 const Wrapper = styled.div`
+  transition: all .35s ease;
   background-color: #1CE1AC;
   cursor: pointer;
   width: 60px;
@@ -12,6 +13,7 @@ const Wrapper = styled.div`
   left: 50%;
   bottom: 10px;
   transform: translateX(-50%);
+  color: ${ ({ theme }) => theme.colors.white };
 
   > div {
     width: 60%;
@@ -28,17 +30,39 @@ const Wrapper = styled.div`
       width: 4px;
     }
   }
+
+  ${ ({ isAddSubscription }) => !isAddSubscription ? '' : `
+    bottom: 0;
+    right: 0;
+    left: unset;
+    transform: translateX(0);
+    border-radius: 38px 0;
+    min-width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+
+    > div {
+      display: none;
+    }
+  `}
 `
 
 const BottomControls = ({ loggedIn }) => {
   const history = useHistory()
+  const { pathname } = useLocation()
+  const isAddSubscription = pathname === '/add'
 
   if (!loggedIn) return null
 
   const handleClick = () => history.push('/add')
   
   return (
-    <Wrapper onClick={ handleClick }>
+    <Wrapper onClick={ handleClick } isAddSubscription={ isAddSubscription }>
+      { isAddSubscription && 'Continuar' }
       <div></div>
       <div></div>
     </Wrapper>

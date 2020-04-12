@@ -20,7 +20,7 @@ const BurgerWrap = styled.div`
   > span {
     width: 100%;
     height: 4px;
-    background-color: ${ ({ theme }) => theme.colors.black };
+    background-color: ${ ({ theme, lightColor }) => theme.colors[ lightColor ? 'white' : 'black' ] };
     border-radius: 2px;
 
     &:first-child {
@@ -40,12 +40,12 @@ const BurgerWrap = styled.div`
   }
 `
 
-const Burger = () => {
+const Burger = ({ lightColor }) => {
   const [ open, setOpen ] = useState(false)
   const handleBurgerClick = () => setOpen(!open)
 
   return (
-    <BurgerWrap onClick={ handleBurgerClick } open={ open }>
+    <BurgerWrap onClick={ handleBurgerClick } open={ open } lightColor={ lightColor }>
       <span></span>
       <span></span>
       <span></span>
