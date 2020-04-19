@@ -19,7 +19,7 @@ const StyledBackIcon = styled(BackIcon)`
   cursor: pointer;
   transition: transform .15s ease-out;
   path {
-    fill: ${ ({ theme, lightColor }) => theme.colors[ lightColor ? 'white' : 'black' ] };
+    fill: ${ ({ theme, islight }) => theme.colors[ islight ? 'white' : 'black' ] };
   }
   
   &:hover {
@@ -37,7 +37,7 @@ const TopControls = ({ loggedIn }) => {
   
   return (
     <HeaderWrap>
-      { isDashboard ? <div></div> : <StyledBackIcon onClick={ goBack } lightColor={ lightColor } /> }
+      { isDashboard ? <div></div> : <StyledBackIcon onClick={ goBack } islight={ lightColor.toString() } /> }
       <Burger lightColor={ lightColor } />
     </HeaderWrap>
   )
