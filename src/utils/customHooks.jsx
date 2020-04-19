@@ -19,9 +19,17 @@ const useForm = callback => {
     }))
   }
 
+  const handleCheckChange = target => {
+    setInputs(inputs => ({
+      ...inputs,
+      [ target.name ]: target.checked
+    }))
+  }
+
   return {
     handleSubmit,
     handleInputChange,
+    handleCheckChange,
     inputs
   }
 }
