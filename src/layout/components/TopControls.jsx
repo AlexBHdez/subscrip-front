@@ -23,7 +23,7 @@ const StyledBackIcon = styled(BackIcon)`
   }
   
   &:hover {
-    transform: translateX(-4px)
+    transform: translateX(-4px);
   }
 `
 

@@ -12,24 +12,16 @@ const useForm = callback => {
   }
 
   const handleInputChange = event => {
-    event.persist()
+    event.persist && event.persist()
     setInputs(inputs => ({
       ...inputs,
       [ event.target.name ]: event.target.value
     }))
   }
 
-  const handleCheckChange = target => {
-    setInputs(inputs => ({
-      ...inputs,
-      [ target.name ]: target.checked
-    }))
-  }
-
   return {
     handleSubmit,
     handleInputChange,
-    handleCheckChange,
     inputs
   }
 }

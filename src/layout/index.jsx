@@ -20,6 +20,7 @@ const AppContainer = styled.div`
   border-radius: 12px;
   background: ${ ({ theme }) => theme.colors.containerBackground };
   position: relative;
+  overflow-y: scroll;
 `
 
 const Inner = styled.main`

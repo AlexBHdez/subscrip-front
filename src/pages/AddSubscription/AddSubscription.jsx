@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Form, FormField, ToggleCheck, Button } from '../../ui'
+import { Form, FormField, Button, Select } from '../../ui'
 import useForm from '../../utils/customHooks'
+import subscriptionApi from '../../api/subscriptionApi'
+import { withRouter } from 'react-router-dom'
 // import * as logos from 'styled-icons/boxicons-logos'
 
 const Introduction = styled.div`
@@ -32,11 +34,25 @@ const Body = styled.div`
   margin-top: 260px;
 `
 
-const AddSubscription = () => {
+const AddSubscription = props => {
+  const [ loadingButton, setLoadingButton ] = useState(false)
 
-  const onSubmit = () => console.log(inputs)
+  const onSubmit = async () => {
+    setLoadingButton(true)
+    const created = await subscriptionApi.newSubscription(inputs)
+    if (created) {
+      setLoadingButton(false)
+      props.history.push('/dashboard')
+    }
+  }
 
-  const { inputs, handleInputChange, handleSubmit, handleCheckChange } = useForm(onSubmit)
+  const { inputs, handleInputChange, handleSubmit } = useForm(onSubmit)
+
+  useEffect(() => {
+    const selectInitialEvent = { target: { name: 'billingPeriod', value: 'monthly' } }
+    handleInputChange(selectInitialEvent)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
@@ -49,12 +65,12 @@ const AddSubscription = () => {
           <FormField label='Name' htmlFor='name' type='text' name='name' onChange={ handleInputChange } value={ inputs.name || '' } />
           <FormField label='Description' htmlFor='description' type='text' name='description' onChange={ handleInputChange } value={ inputs.description || '' } />
           <FormField label='Price' htmlFor='price' type='number' name='price' onChange={ handleInputChange } value={ inputs.price || '' } />
-          <ToggleCheck onClick={ handleCheckChange } label='Billing Period' htmlFor='billingPeriod' type='checkbox' name='billingPeriod' checked={ inputs.billingPeriod } />
-          <Button type='submit'>Create subscrip</Button>
+          <Select label='Billing Period' htmlFor='billingPeriod' value={ inputs.billingPeriod || 'monthly' } name='billingPeriod' onChange={ handleInputChange } options={ ['monthly', 'yearly'] } />
+          <Button type='submit'>{ loadingButton ? 'Creating' : 'Create a new Subscrip' }</Button>
         </Form>
       </Body>
     </>
   )
 }
 
-export default AddSubscription
+export default withRouter(AddSubscription)

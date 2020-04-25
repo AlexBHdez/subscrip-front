@@ -14,7 +14,7 @@ const FormFieldWrap = styled.div`
     background-color: #f5f5f5;
     color: ${ ({ theme }) => theme.colors.gray };
     padding: 4px 8px;
-    transition: color .35s ease;  
+    transition: color .35s ease;
   }
 
   > input {
@@ -25,14 +25,14 @@ const FormFieldWrap = styled.div`
     border-radius: 4px;
     transition: border-color .50s ease;
     font-size: 14px;
-    padding-left: 15px;  
+    padding-left: 15px;
   }
 
-  &:hover > Label {
+  &:hover > label {
     color: initial;
   }
 
-  &:hover > Input, Input:focus {
+  &:hover > input, input:focus {
     border-color: initial;
   }
 `
